@@ -5,9 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <title>Programming App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+
+    <title>Programming Suggester</title>
   </head>
   <body>
+    <div class="container">
+      <h1 class="text-center mt-4">Programming language Suggester</h1>
+      <script src="js/scripts.js"></script>
+      <form id="survey-form" class="mt-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="result-container" class="mt-4 p-3 d-none">
+        <h2 class="text-center">
+          This is your suggested programming language:
+        </h2>
+        <p id="result" class="lead text-center"></p>
+      </div>
+    </div>
     <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
