@@ -1,0 +1,31 @@
+body {
+  background-color: #d6cbd3;
+  font-family: Arial, sans-serif;
+  marging: 20px;
+}
+
+.container {
+  background-color: #bdcebe;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  marging: 20px auto;
+}
+
+#results-container {
+  max-widt: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #e3eaa7;
+}
