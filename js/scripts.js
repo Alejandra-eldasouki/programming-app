@@ -25,11 +25,11 @@ const languageSuggestions = [
   },
 ];
 
-const form = document.getElementById('surveyForm');
+const form = document.getElementById('survey-form');
 const resultsCnt = document.getElementById('results-container');
 const results = document.getElementById('result');
 
-form.addEventListener('submit', function (e) {
+form?.addEventListener('submit', function (e) {
   e.preventDefault();
   resultsCnt.style.display = 'none';
   results.textContent = '';
