@@ -25,6 +25,17 @@ const languageSuggestions = [
   },
 ];
 
-const form = document.getElementById('survey-form');
+const form = document.getElementById('surveyForm');
 const resultsCnt = document.getElementById('results-container');
 const results = document.getElementById('result');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  resultsCnt.style.display = 'none';
+  results.textContent = '';
+  form.reset();
+
+  const suggestions = calculateSuggestion();
+  results.textContent = suggestions;
+  resultsCnt.style.display = 'block';
+});
