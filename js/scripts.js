@@ -27,18 +27,38 @@ const languageSuggestions = [
 
 const form = document.getElementById('survey-form');
 const resultsCnt = document.getElementById('results-container');
-const results = document.getElementById('result');
+const result = document.getElementById('result');
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   resultsCnt.style.display = 'none';
-  results.textContent = '';
-  form.reset();
+  result.textContent = '';
+  //   form.reset();
 
   const suggestion = calculateAnswer();
-  results.textContent = suggestions;
+
+  result.textContent = suggestion;
   resultsCnt.style.display = 'block';
 });
+
+window.addEventListener('load', function () {
+  addQuestions();
+});
+
+function addQuestions() {
+  for (const question of languageSuggestions) {
+    for (let i = 0; i < question.questions.length; i++) {
+      const input = document.createElement('input');
+      const label = document.createElement('label');
+      input.name = `question${i + 1}`;
+      input.id = `${question.language}${i + 1}`;
+      label.textContent = question.questions[i];
+      label.htmlFor = `${question.language}${i + 1}`;
+      form.appendChild(label);
+      form.appendChild(input);
+    }
+  }
+}
 
 function calculateAnswer() {
   for (const suggestion of languageSuggestions) {
@@ -46,10 +66,12 @@ function calculateAnswer() {
     for (let i = 0; i < suggestion.questions.length; i++) {
       const question = suggestion.questions[i];
       const answer = form.elements[`question${i + 1}`].value.toLowerCase();
+      console.log(answer);
       if (answer === suggestion.answers[i]) {
         matches++;
       }
     }
+    console.log(matches);
     if (matches === suggestion.questions.length) {
       return suggestion.language;
     }
