@@ -29,13 +29,29 @@ const form = document.getElementById('survey-form');
 const resultsCnt = document.getElementById('results-container');
 const results = document.getElementById('result');
 
-form?.addEventListener('submit', function (e) {
+form.addEventListener('submit', function (e) {
   e.preventDefault();
   resultsCnt.style.display = 'none';
   results.textContent = '';
   form.reset();
 
-  const suggestions = calculateSuggestion();
+  const suggestion = calculateAnswer();
   results.textContent = suggestions;
   resultsCnt.style.display = 'block';
 });
+
+function calculateAnswer() {
+  for (const suggestion of languageSuggestions) {
+    let matches = 0;
+    for (let i = 0; i < suggestion.questions.length; i++) {
+      const question = suggestion.questions[i];
+      const answer = form.elements[`question${i + 1}`].value.toLowerCase();
+      if (answer === suggestion.answers[i]) {
+        matches++;
+      }
+    }
+    if (matches === suggestion.questions.length) {
+      return suggestion.language;
+    }
+  }
+}
