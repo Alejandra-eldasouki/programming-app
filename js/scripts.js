@@ -24,3 +24,7 @@ const languageSuggestions = [
     answers: ['yes', 'yes'],
   },
 ];
+
+const form = document.getElementById('survey-form');
+const resultsCnt = document.getElementById('results-container');
+const results = document.getElementById('result');
