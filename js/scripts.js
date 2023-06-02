@@ -65,6 +65,7 @@ function calculateAnswer() {
     let matches = 0;
     for (let i = 0; i < suggestion.questions.length; i++) {
       const question = suggestion.questions[i];
+      console.log(form.elements);
       const answer = form.elements[`question${i + 1}`].value.toLowerCase();
       console.log(answer);
       if (answer === suggestion.answers[i]) {
