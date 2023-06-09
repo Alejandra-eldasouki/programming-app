@@ -31,14 +31,11 @@ const result = document.getElementById('result');
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  resultsCnt.style.display = 'none';
-  result.textContent = '';
-  form.reset();
-
   const suggestion = calculateAnswer();
 
   result.textContent = suggestion;
-  resultsCnt.style.display = 'block';
+  resultsCnt.classList.remove('d-none');
+  form.reset();
 });
 
 window.addEventListener('load', function () {
@@ -61,11 +58,12 @@ function addQuestions() {
 }
 
 function calculateAnswer() {
+  let matches = 0;
   for (const suggestion of languageSuggestions) {
-    let matches = 0;
     for (let i = 0; i < suggestion.questions.length; i++) {
-      const question = suggestion.questions[i];
-      const answer = form.elements[`question${i + 1}`].value.toLowerCase();
+      const answer = document.getElementById(
+        `${suggestion.language}${i + 1}`
+      ).value;
       if (answer === suggestion.answers[i]) {
         matches++;
       }
