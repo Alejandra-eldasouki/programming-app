@@ -2,15 +2,11 @@
 
 ### Programming App is a web application that helps users choose a programming language based on their answers.
 
-### Contributors:
+## Setup/Installation requirements
 
-Contributions are welcome! If you would like to contribute to the JavaScript Programming Picker App, follow these steps:
-
-- Fork the repository.
-- Create a new branch: git checkout -b feature/my-feature.
-- Make your changes and commit them: git commit -m 'Add some feature'.
-- Push to the branch: git push origin feature/my-feature.
-- Submit a pull request.
+- Clone this repository in your local terminal
+- open the repository in VSCODE
+- Click Go Live on the bottom right of VSCODE
 
 ### Technologies used:
 
@@ -27,3 +23,7 @@ Contributions are welcome! If you would like to contribute to the JavaScript Pro
 ### Site:
 
 https://alejandra-eldasouki.github.io/programming-app/
+
+### License
+
+Copyright (c) 2016 **_Alejandra El-Dasouki_**

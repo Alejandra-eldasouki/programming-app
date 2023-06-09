@@ -33,7 +33,7 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   resultsCnt.style.display = 'none';
   result.textContent = '';
-  //   form.reset();
+  form.reset();
 
   const suggestion = calculateAnswer();
 
