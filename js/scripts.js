@@ -71,5 +71,7 @@ function calculateAnswer() {
     if (matches === suggestion.questions.length) {
       return suggestion.language;
     }
+    matches = 0;
   }
+  return 'No matches found, try again';
 }
